@@ -1,0 +1,328 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+:root{
+  --clr-lime:hsl(61, 70%, 52%);
+  --clr-red:hsl(4, 69%, 50%);
+  --clr-slate-100:hsl(202, 86%, 94%);
+  --clr-slate-300:hsl(203, 41%, 72%);
+  --clr-slate-500:hsl(200, 26%, 54%);
+  --clr-slate-700:hsl(200, 24%, 40%);
+  --clr-slate-900:hsl(202, 55%, 16%);
+}
+@font-face {
+  font-family: Plus Jakarta Sans;
+  src: url('/assets/fonts/static/PlusJakartaSans-Medium.ttf');
+}
+@font-face {
+  font-family: Plus Jakarta Sans Bold;
+  src: url('/assets/fonts/static/PlusJakartaSans-Bold.ttf');
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Plus Jakarta Sans";
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  width: 100vw;
+}
+
+.form>h1,
+p {
+  margin-left: calc(100vw * 0.1);
+  margin-bottom: 0.1rem;
+}
+.form > h1{
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: var(--clr-slate-900);
+}
+.form > p{
+  margin-bottom: 1rem;
+  text-decoration: 0.5px solid underline var(--clr-slate-500);
+  font-size: 0.9rem;
+  color: var(--clr-slate-500);
+}
+.input {
+  width: 80%;
+  border: 0.5px solid var(--clr-slate-900);
+  border-radius: 0.3rem;
+  margin: 0.5rem auto 1rem auto;
+  padding: 0.3rem 1rem;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.input,.input>input:hover{
+  cursor: pointer;
+}
+label {
+  font-size: 0.9rem;
+  color: var(--clr-slate-700);
+  margin-left: calc(100vw * 0.1);
+}
+
+input {
+  width: 80%;
+  border: none;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+.mortgage-amount>input {
+  margin-left: 2rem;
+}
+
+.mortgage-amount::before {
+  /* used unicode + also can be done by copying and pasting*/
+  content: "\00A3";
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: auto;
+  width: 15%;
+  background-color: var(--clr-slate-100);
+  padding-left: 0.2rem;
+  height: 100%;
+  margin-top: -0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mortgage-term::before {
+  content: "years";
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  top: auto;
+  bottom: auto;
+  width: 25%;
+  background-color: rgba(173, 216, 230, 0.5);
+  padding-left: 0.2rem;
+  height: 100%;
+  margin-top: -0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest-rate::before {
+  content: "%";
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  top: auto;
+  bottom: auto;
+  width: 15%;
+  background-color: rgba(173, 216, 230, 0.5);
+  padding-left: 0.2rem;
+  height: 100%;
+  margin-top: -0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+fieldset{
+  border: none;
+  width: 90%;
+ 
+}
+
+fieldset > div{
+  border: 0.5px solid var(--clr-slate-900);
+  width: 95%;
+  display: grid;
+  grid-column: 1fr 8fr;
+  justify-content: start;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-left: calc(100vw * 0.07);
+  padding: 0.7rem 0.3rem;
+  border-radius: 0.5rem;
+}
+fieldset > div > label{
+  grid-column: 2 / 10;
+  margin-left: -2px;
+  font-family: "Plus Jakarta Sans Bold";
+  color: var(--clr-slate-900);
+}
+fieldset > div > input[type="radio"]{
+  grid-column: 1 / 2;
+  width: 30px;
+  color:red
+}
+fieldset > div > input[type="radio"]:checked{
+  border-color: red;
+}
+
+fieldset > div:hover,label:hover,input:hover fieldset > div{
+  border-color: var(--clr-lime) ;
+  cursor: pointer;
+}
+fieldset > legend{
+  margin-left: calc(100vw * 0.07);
+}
+
+button[type="submit"]{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: calc(100vw * 0.05);
+  background-color: var(--clr-lime);
+  text-align: left;
+  width: 90%;
+  padding: 0.7rem 0.4rem;
+  border: none;
+  border-radius: 50px;
+  gap:1rem;
+  color: var(--clr-slate-900);
+  font-weight: 900;
+}
+button[type="submit"]:hover{
+  cursor: pointer;
+  background-color: hsla(61, 70%, 52%,0.5);
+}
+section.result > div{
+  margin-top: 2.5rem;
+  background-color: var(--clr-slate-900);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+section.result> div > img {
+  margin-top: 3rem;
+  transform: rotateY(180deg);
+}
+section.result > div > h2 {
+  color:var(--clr-slate-100);
+  margin-bottom: 1rem;
+}
+section.result > div > p{
+  margin-bottom: 2rem;
+  color: var(--clr-slate-300);
+}
+.completed-result > h2{
+  margin-top: 1.5rem;
+  font-size:1.2rem;
+  align-self: flex-start;
+  margin-left:calc(100vw * 0.1)
+}
+.completed-result > h2
+,p{
+  text-align: left;
+}
+.calculated-result{
+  border-top:5px solid var(--clr-lime);
+  border-radius: 0.5rem;
+  background-color: hsl(201, 100%, 7%);
+  padding: 1rem;
+  color: var(--clr-slate-100);
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.monthly-repayments{
+  border-bottom: 1px solid var(--clr-slate-700);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.monthly-repayment-amount{
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+.monthly-repayments > p{
+  font-size: 0.rem;
+  font-weight: 200;
+} 
+.total-repayment-amount{
+  font-size:1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width:950px){
+  .container{
+    max-width: 1050px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:2rem
+  }
+  .form{
+    border:1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left:1rem;
+  }
+  label{
+    margin-left: 1.7rem;
+  }
+  .input{
+    width: 100%;
+  }
+  fieldset{
+    border: 1px solid red;
+    width: 100%;
+  }
+  .result{
+    margin-top:0;
+    display: flex;
+    
+    border-bottom-left-radius: 70px;
+    overflow: hidden;
+  }
+}
